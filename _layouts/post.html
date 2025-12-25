@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} | {{ site.social.name | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="nav">
+      <div class="logo"><a href="{{ site.baseurl }}/">{{ site.social.name | default: site.title }}</a></div>
+      <nav class="nav-links">
+        <a href="{{ site.baseurl }}/#bio">Biography</a>
+        <a href="{{ site.baseurl }}/projects.html">Projects</a>
+        <a href="{{ site.baseurl }}/writeups.html">Write-ups</a>
+        <a href="{{ site.baseurl }}/#contact">Contact</a>
+      </nav>
+      <a class="pill" href="https://github.com/{{ site.github.username }}" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main>
+      <article class="blog-post">
+        <header class="blog-post__header">
+          <p class="eyebrow">Writeup</p>
+          <h1>{{ page.title }}</h1>
+          <div class="blog-post__meta">
+            <span>{{ page.date | date: "%b %d, %Y" }}</span>
+            <span>•</span>
+            <span>{{ content | number_of_words | divided_by:180 | ceil }} min read</span>
+            {% if page.tags and page.tags.size > 0 %}
+              <span>•</span>
+              <span>{{ page.tags | join: ", " }}</span>
+            {% endif %}
+          </div>
+        </header>
+        <div class="blog-post__body">
+          {{ content }}
+        </div>
+        <footer class="blog-post__footer">
+          <a class="btn ghost" href="{{ site.baseurl }}/writeups.html">← Back to Write-ups</a>
+          <a class="btn ghost" href="{{ site.baseurl }}/">Home</a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p>Built by Muhammad • Powered by GitHub Pages</p>
+      <div class="footer__links">
+        <a href="{{ site.baseurl }}/">Back to home</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
