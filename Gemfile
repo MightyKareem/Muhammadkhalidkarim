@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.0", ">= 7.0.1"
+# gem "jekyll-theme-chirpy", "~> 7.0", ">= 7.0.1"  # REMOVED - using custom layouts
 
 gem "jekyll", "~> 4.3.0"
 gem "html-proofer", "~> 5.0", group: :test
@@ -14,10 +14,7 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
 group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-redirect-from"
   gem "jekyll-seo-tag"
-  gem "jekyll-archives"
   gem "jekyll-sitemap"
   gem "jekyll-feed"
 end
